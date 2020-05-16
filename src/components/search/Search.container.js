@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { compose, withHandlers } from 'recompose';
+import { compose, withHandlers, withState } from 'recompose';
 import { searchBeer } from '../../redux/actions/beers';
 import Search from './Search.view';
 
@@ -7,9 +7,13 @@ export default compose(
   connect(null, {
     searchBeer,
   }),
+  withState('search','setSearch',null),
   withHandlers({
-      handleChange: ({searchBeer}) => ({ target: { value } }) => {
-        searchBeer(value);
+      handleChange: ({setSearch}) => ({ target: { value } }) => {
+        setSearch(value);
       },
+      handleSubmit: ({searchBeer, search})=>(e)=> {
+        e.preventDefault(); 
+        console.log(search,'qqq'); searchBeer(search)},
   })
 )(Search);

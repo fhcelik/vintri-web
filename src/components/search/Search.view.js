@@ -11,14 +11,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default ({ handleChange, query }) => {
+export default ({ handleChange, handleSubmit, query }) => {
     const classes = useStyles();
   
     return (
-      <form className={classes.root} noValidate autoComplete="off">
+      <form className={classes.root} noValidate autoComplete="off" onSubmit={handleSubmit}>
         <div>
-          <TextField id="outlined-search" label="Search field" type="search" variant="outlined" OnChange={handleChange} value={query}/>
+          <TextField id="outlined-search" label="Search field" type="search" variant="outlined" onChange={handleChange} value={query}/>
         </div>
+        <button>Search</button>
       </form>
     );
   }

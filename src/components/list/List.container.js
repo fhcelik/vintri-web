@@ -19,7 +19,7 @@ export default compose(
             setPage(0);
         }
     }),
-    withProps(({...beerProps}) => (
+    withProps(({beerProps}) =>  (
         beerProps.map(({ id, name, description, first_brewed, food_pairings }) => 
             ({id, name, description, first_brewed, food_pairings, rating:<Rating id={id}/>, comment:<Comment id={id}/>}) )
         ))

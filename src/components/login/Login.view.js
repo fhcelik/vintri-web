@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
 import Notification from '../Notification';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
     margin: {
@@ -11,10 +12,10 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-export default ({handleChange, query}) => {
+export default ({handleChange, handleSubmit, query}) => {
     const classes = useStyles();
     return (
-        <div className={classes.margin}>
+        <form className={classes.margin} onSubmit={handleSubmit}>
             <Grid container spacing={1} alignItems="flex-end">
             <Grid item>
                 <AccountCircle />
@@ -22,9 +23,10 @@ export default ({handleChange, query}) => {
             <Grid item>
                 <TextField id="input-with-icon-grid" label="Enter e-mail" value={query} onChange={handleChange}/>
             </Grid>
+            <button>Submit</button>
             <Notification/>
             </Grid>
-        </div>
+        </form>
     )
 }
 
