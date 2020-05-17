@@ -17,7 +17,7 @@ import { logout, notification } from '../redux/actions/auth';
 export const history = createBrowserHistory();
 
 const httpClient = Axios.create({
-  baseURL: process.env.REACT_APP_API_URL,
+  baseURL:'http://localhost:5000',
   withCredentials: true,
 });
 
