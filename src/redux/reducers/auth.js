@@ -4,16 +4,10 @@ import * as Actions from '../actions/auth';
 export default handleActions(
   {
     [Actions.logout]: (auth, { payload: value }) => ({
-      user: value || null
+      user: value
     }),
   },
   {
-    [Actions.notification]: (auth, { payload: value }) => ({
-      notification: value
-    }),
-  },
-  {
-    user: null,
-    notification: false
+    user: false,
   }
 );

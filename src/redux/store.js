@@ -12,7 +12,7 @@ import persistReducer from 'redux-persist/lib/persistReducer';
 import thunk from 'redux-thunk';
 import fsaThunk from './fsa-thunk';
 import reducer from './reducers';
-import { logout, notification } from '../redux/actions/auth';
+import { logout } from '../redux/actions/auth';
 
 export const history = createBrowserHistory();
 
@@ -51,18 +51,21 @@ export default function configureStore(initialState = {}, persist = true) {
 
   httpClient.interceptors.response.use(
     response => {
-      const status = R.pathOr(null, ['response', 'status'], response);
-      if(status == 200) {
-        store.dispatch(logout('Ok'));
-        store.dispatch(notification(false));
+      const status = R.pathOr(null, ['status'], response);
+
+      if(status === 204) {
+        store.dispatch(logout(true));
       }
+
       return response;
     },
     error => {
       const status = R.pathOr(null, ['response', 'status'], error);
-      store.dispatch(logout(null));
-      store.dispatch(notification(true));
-      
+      console.log(error)
+      if(status === 401){
+      store.dispatch(logout(false));
+      }
+
       return Promise.reject(error);
     }
   );

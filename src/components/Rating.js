@@ -13,6 +13,7 @@ const enhance = compose(
         handleChange: ({id, setVal, saveRating}) => (event, newValue) => {
           setVal(newValue);
           saveRating({id, newValue});
+          console.log(id, newValue)
         }
     })
 );
@@ -22,7 +23,6 @@ const SimpleRating = ({ handleChange, value}) => {
   return (
     <div>
       <Box component="fieldset" mb={3} borderColor="transparent">
-        <Typography component="legend">Controlled</Typography>
         <Rating
           name="simple-controlled"
           value={value}

@@ -1,3 +1,3 @@
 import * as R from 'ramda';
 
-export const getBeersPropsSelector = R.propOr([],'beers');
+export const getBeersPropsSelector = R.path(['beers', 'beers']);

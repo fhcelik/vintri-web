@@ -14,6 +14,6 @@ export default compose(
       },
       handleSubmit: ({saveQueryEmail, search})=>(e)=> {
         e.preventDefault(); 
-        console.log(search,'qqq'); saveQueryEmail(search)},
+        saveQueryEmail(search)},
   })
 )(Login);

@@ -3,11 +3,11 @@ import * as Actions from '../actions/beers';
 
 export default handleActions(
   {
-    [Actions.beersProps]: (beers, { payload }) => {console.log(payload); return({
+    [Actions.beersProps]: (beers, { payload }) => ({
       beers: payload
-    })},
+    }),
   },
   {
-    beers: [],
+    beers: [{ id:"", name:"", description:"", first_brewed:"", food_pairings:"" }],
   }
 );

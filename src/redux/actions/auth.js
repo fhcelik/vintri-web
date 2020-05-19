@@ -1,16 +1,14 @@
 import { createAction } from 'redux-actions';
+import { push } from 'react-router-redux';
 
 export const saveQueryEmail = createAction(
   '@@vintri/auth/login',
-  email => (dispatch, getState, httpClient) => {
-    return httpClient.post('/login', { email });
+  user => (dispatch, getState, httpClient) => {
+    return httpClient.put('/login', { user }, {headers: { 'x-user': user }});
   }
 );
 
 export const logout = createAction(
-    '@@vintri/auth/notlogin',
+  '@@vintri/auth/logout',
 );
 
-export const notification = createAction(
-  '@@vintri/auth/notification',
-);
