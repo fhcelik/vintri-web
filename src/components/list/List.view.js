@@ -10,42 +10,25 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 
 const columns = [
-  { id: 'id', label: 'ID', minWidth: 170 },
-  { id: 'name', label: 'Name', minWidth: 100 },
+  { id: 'id', label: 'ID', minWidth: 50 },
+  { id: 'name', label: 'Name', minWidth: 150 },
   {
     id: 'description',
     label: 'Description',
     minWidth: 170,
-    align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
+
   },
   {
     id: 'first_brewed',
     label: 'First Brewed',
     minWidth: 170,
-    align: 'right',
-    format: (value) => value.toLocaleString('en-US'),
+
   },
   {
-    id: 'food_pairings',
-    label: 'Food Pairings',
+    id: 'food_pairing',
+    label: 'Food Pairing',
     minWidth: 170,
-    align: 'right',
-    format: (value) => value.toFixed(2),
-  },
-  {
-    id: 'rating',
-    label: 'Rating',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toFixed(2),
-  },
-  {
-    id: 'comments',
-    label: 'Comments',
-    minWidth: 170,
-    align: 'right',
-    format: (value) => value.toFixed(2),
+
   }
 ];
 

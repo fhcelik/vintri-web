@@ -14,6 +14,6 @@ export default compose(
       },
       handleSubmit: ({searchBeer, search})=>(e)=> {
         e.preventDefault(); 
-        console.log(search,'qqq'); searchBeer(search)},
+        searchBeer(search)},
   })
 )(Search);
