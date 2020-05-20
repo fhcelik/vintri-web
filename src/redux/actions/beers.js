@@ -1,5 +1,4 @@
 import * as R from 'ramda';
-import { push } from 'react-router-redux';
 import { createAction } from 'redux-actions';
 
 export const searchBeer = createAction(

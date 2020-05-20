@@ -1,8 +1,7 @@
-import React from 'react';
 import { connect } from 'react-redux';
-import { compose, withHandlers, withProps, withState } from 'recompose';
+import { compose, withHandlers, withState } from 'recompose';
+import { getBeersPropsSelector } from '../../redux/selectors/beers';
 import List from './List.view';
-import { getBeersPropsSelector } from '../../redux/selectors/beers'
 
 export default compose(
     connect(state => ({ beerProps: getBeersPropsSelector(state) })),

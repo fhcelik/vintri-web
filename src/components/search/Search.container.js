@@ -14,6 +14,7 @@ export default compose(
       },
       handleSubmit: ({searchBeer, search})=>(e)=> {
         e.preventDefault(); 
-        searchBeer(search)},
+        searchBeer(search);
+      }
   })
 )(Search);

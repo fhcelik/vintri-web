@@ -1,15 +1,15 @@
-import React from 'react';
-import Login from './login';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import ListItems from './ListItems'
 import { Grid } from '@material-ui/core';
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import ListItems from './ListItems/index';
+import Login from './login';
 
 const App = () => (
     <Grid>
       <BrowserRouter>
         <Switch>
-          <Route exact path='/' component={Login} />
           <Route path='/list' component={ListItems} />
+          <Route exact path='/' component={Login} />
         </Switch>
       </BrowserRouter>
     </Grid>

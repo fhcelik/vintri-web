@@ -1,6 +1,6 @@
+import * as R from 'ramda';
 import { handleActions } from 'redux-actions';
 import * as Actions from '../actions/beers';
-import * as R from 'ramda';
 
 export default handleActions(
   {

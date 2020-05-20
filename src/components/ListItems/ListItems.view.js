@@ -1,52 +1,33 @@
-import React from 'react';
-import List from '../list';
-import Search from '../search'
 import { Grid } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import Box from '@material-ui/core/Box';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import Box from '@material-ui/core/Box';
 import TextField from '@material-ui/core/TextField';
 import Rating from '@material-ui/lab/Rating';
+import React from 'react';
+import List from '../list';
+import Search from '../search';
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        '& .MuiTextField-root': {
-          margin: theme.spacing(1),
-          width: '25ch',
-        },
-      },
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
-  },
-  selectEmpty: {
-    marginTop: theme.spacing(2),
-  },
-}));
-
-export default ({ age , comment, commentChange, handleChange, handleSubmit, rating, ratingChange, ids}) => {
-    const classes = useStyles();
-
-    return (
+export default ({ age , comment, commentChange, handleChange, handleSubmit, rating, ratingChange, ids}) => 
+    (
     <Grid>
         <Search/>
         <List/>
         <Grid>
-            <form className={classes.formControl} onSubmit={handleSubmit}>
-                <InputLabel id="demo-simple-select-label">ID</InputLabel>
-                <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={age}
-                onChange={handleChange}
-                >
-                {ids.map( id => <MenuItem key={id} value={id}>{id}</MenuItem>)}
-                </Select>
-                <div>
+            <form style={{ border:'red dashed 1px', margin:'10px 500px'}} onSubmit={handleSubmit}>
+                <Grid container>
+                    <InputLabel id="demo-simple-select-label">ID : </InputLabel>
+                    <Select 
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    value={age}
+                    onChange={handleChange}
+                    >
+                    {ids.map( id => <MenuItem key={id} value={id}>{id}</MenuItem>)}
+                    </Select>
+                </Grid>
+                <Grid> 
                     <Box component="fieldset" mb={3} borderColor="transparent">
                         <Rating
                         name="simple-controlled"
@@ -54,11 +35,22 @@ export default ({ age , comment, commentChange, handleChange, handleSubmit, rati
                         onChange={ratingChange}
                         />
                     </Box>
-                </div>
+                </Grid>
                 <TextField id="standard-basic" label="Comment" value={comment} onChange={commentChange}/>
-                <button>Submmit</button>
+                <button style={{ 
+                          backgroundColor: 'grey',
+                          border: 'none',
+                          color: 'white',
+                          padding: '15px 32px',
+                          textAlign: 'center',
+                          textDecoration: 'none',
+                          display: 'inline-block',
+                          fontSize: '16px',
+                          marginTop: '2px',
+                          marginLeft: '12px',
+                          cursor: 'pointer', }}>Submit</button>
             </form>
         </Grid>
     </Grid>
-)}
+)
  

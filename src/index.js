@@ -1,22 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App';
-import { PersistGate } from 'redux-persist/es/integration/react';
-import * as serviceWorker from './serviceWorker';
-import WebFont from 'webfontloader';
 import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'react-router-redux';
-import configureStore, { history } from './redux/store';
+import App from './components/App';
+import configureStore from './redux/store';
+import * as serviceWorker from './serviceWorker';
 
-const { store, persistor, isReady } = configureStore();
+const { store } = configureStore();
 
 ReactDOM.render(
   <Provider store={store}>
-    {/* <PersistGate loading={null} persistor={persistor}>
-      <ConnectedRouter history={history}> */}
         <App />
-      {/* </ConnectedRouter>
-    </PersistGate> */}
   </Provider>,
   document.getElementById('root')
 );

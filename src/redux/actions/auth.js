@@ -1,5 +1,4 @@
 import { createAction } from 'redux-actions';
-import { push } from 'react-router-redux';
 
 export const saveQueryEmail = createAction(
   '@@vintri/auth/login',
