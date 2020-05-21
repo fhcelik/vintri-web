@@ -1,4 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The server fetchs data from external api (punk api), https://punkapi.com/documentation/v2 and gives rates the data. 
+Also, it checks user email.
 
 ## Available Scripts
 
